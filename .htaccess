@@ -1,0 +1,19 @@
+RewriteEngine On  
+
+Options -Indexes
+
+PHP_VALUE default_charset utf-8  
+
+RewriteCond %{SCRIPT_FILENAME} !-d  
+RewriteCond %{SCRIPT_FILENAME} !-f  
+RewriteRule ^/?api/?(.*)$ ./api.php?_endpoint=$1 [QSA,L]
+
+RewriteCond %{SCRIPT_FILENAME} !-d  
+RewriteCond %{SCRIPT_FILENAME} !-f  
+RewriteRule ^(.*)$ ./index.php?route_url=$1 [QSA,L]
+
+
+
+
+
+
